@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <input type="text" id="demo">
+    <button type="button" onclick="myFunction()">Click</button>
+    <p id="p01"></p>
+    <script>
+        function myFunction(){
+        var message, x;
+        message = document.getElementById('p01');
+        message.innerHTML = "";
+        x = document.getElementById('demo').value; //입력 받음
+        try { 
+            if(x == "") throw "빈 문자열";
+            if(isNaN(x)) throw "숫자가 아닙니다.";
+            x = Number(x);
+            if(x < 5) throw "5보다 작습니다."
+            if(x > 10) throw "10보다 큽니다."
+        } catch(err){
+            message.innerHTML = "Input is " + err; 
+            }
+        }
+    </script>
+
+</body>
+</html>
